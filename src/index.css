@@ -165,3 +165,42 @@ a:hover{
   margin-left: 1rem;
   margin-top: 1rem;
 }
+
+/*Detalles de articulo*/
+.detalles{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  padding: 1rem;
+}
+
+.detalles_imagen{
+  flex: 2 1 60rem;
+}
+
+.detalles_imagen img{
+  max-width: 60rem;
+  widows: 100%;
+}
+
+.detalles_caracteristicas{
+  flex: 1 1 30rem;
+}
+
+.detalles_carrito{
+  flex: 1 1 30rem;
+}
+
+.detalles_caracteristicas ul, .detalles_carrito ul{
+  list-style-type: none;
+  padding: 0;
+}
+
+.detalles_caracteristicas li, .detalles_carrito li{
+  margin-bottom: 1rem;
+}
+
+.regreso{
+  padding: 1rem;
+}
