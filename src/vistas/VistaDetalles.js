@@ -6,6 +6,7 @@ function VistaDetalles(props){
     console.log(props.match.params.id);
     const articulo= info.productos.find(x=>x.id===props.match.params.id)
     return <div>
+        
         <div class="regreso">
         <Link to="/"> &#x3C; Volver al inicio</Link>
         </div>
@@ -48,7 +49,7 @@ function VistaDetalles(props){
                     </select>
                 </li>
                 <li>
-                    <button>Añadir al carro</button>
+                    <button class="carrito">Añadir al carro</button>
                 </li>
             </ul>
          </div>

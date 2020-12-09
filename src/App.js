@@ -1,75 +1,117 @@
 import React from 'react';
-import info from './info';
-import {BrowserRouter, Link, Route} from 'react-router-dom'
-import './App.css';
+import {BrowserRouter, Route} from 'react-router-dom'
 import VistaPrincipal from './vistas/VistaPrincipal'
 import VistaDetalles from './vistas/VistaDetalles'
+import {Navbar, NavDropdown,Nav,Image,Carousel,Container} from 'react-bootstrap'
+import 'bootstrap/dist/css/bootstrap.min.css'
+import './App.css'
+
 
 function App() {
 
-    const abrirMenu=()=>{
-        document.querySelector(".menu_lateral").classList.add("open");
-    }
-
-    const cerrarMenu=()=>{
-        document.querySelector(".menu_lateral").classList.remove("open");
-    }
-
+    
 
   return (
+      
    <BrowserRouter>
-    <div class="contenedor_primario">
-            <header class="header">
-                <div class="marca">
-                    <button class="lateral" onClick={abrirMenu}>&#9776;</button>
-                    <Link to="/">Home Audio</Link> 
-                </div>
-                <div class="header_links">
-                    <a href="cart.html">Carrito</a>
-                    <a href="sesion.html">Iniciar sesion</a>
-                </div>
-            </header>
-            <aside class="menu_lateral">
-                <button class="cerrar_menu_lateral" onClick={cerrarMenu}>X</button>
-                <h3>Categorias</h3>
-                <ul>Repuestos y reparaciones
-                    <li>
-                        <a href="index.html">Faros</a>
-                    </li>
-                    <li>
-                        <a href="index.html">Llantas</a>
-                    </li>
-                    <li>
-                        <a href="index.html">Rines</a>
-                    </li>
-                    <li>
-                        <a href="index.html">Amortiguadores</a>
-                    </li>
-                </ul>
-                <ul>Sonido
-                    <li>
-                        <a href="index.html">Radios</a>
-                    </li>
-                    <li>
-                        <a href="index.html">Altavoces</a>
-                    </li>
-                    <li>
-                        <a href="index.html">Pantallas</a>
-                    </li>
-                    <li>
-                        <a href="index.html">Planta</a>
-                    </li>
-                </ul>
-            </aside>
-            <main class="main">
-                <div class="contenido">
-                    <Route path="/" exact={true} component={VistaPrincipal}/>
-                    <Route path="/articulo/:id" component={VistaDetalles}/>
 
-                </div>
-            </main> 
-            <footer class="footer">Derechos reservados</footer>         
-    </div>
+    <head>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></link>
+    </head>
+          
+          
+            <Navbar bg="dark" variant="dark" expand="lg" sticky="top">
+              <Navbar.Brand href="/"><Image width={150} height={100} className="mr-3" src="/imagenes/icono.jpg" fluid /></Navbar.Brand>
+              <Navbar.Toggle aria-controls="basic-navbar-nav" />
+              <Navbar.Collapse id="basic-navbar-nav">
+                <Nav className="mr-auto">
+                  <NavDropdown title="Refacciones" id="basic-nav-dropdown">
+                    <NavDropdown.Item >Faros</NavDropdown.Item>
+                    <NavDropdown.Item >Calaveras</NavDropdown.Item>
+                    <NavDropdown.Item >Llantas</NavDropdown.Item>
+                    <NavDropdown.Item >Amortiguadores</NavDropdown.Item>
+                    <NavDropdown.Item >Espejos laterales</NavDropdown.Item>
+                   
+                  </NavDropdown>
+                  <NavDropdown title="Sonido" id="basic-nav-dropdown">
+                    <NavDropdown.Item >Estereos</NavDropdown.Item>
+                    <NavDropdown.Item >Altavoces</NavDropdown.Item>
+                    <NavDropdown.Item >Pantallas</NavDropdown.Item>
+                    <NavDropdown.Item >Plantas</NavDropdown.Item>
+                   
+                  </NavDropdown>
+                  <Nav.Link href="#home" id="extra">Carrito</Nav.Link>
+                  <Nav.Link href="#link" id="extra">Iniciar sesion</Nav.Link>
+                </Nav>
+                
+              </Navbar.Collapse>
+            </Navbar>
+             
+            
+            <header>
+            <body >
+            <Container className="justify-content-center">
+            <Carousel>
+              <Carousel.Item>
+                <img 
+                  className="d-block w-100"
+                  src="/imagenes/portada.jpg"
+                  alt="First slide"
+                />
+                <Carousel.Caption>
+                  <h3>First slide label</h3>
+                  <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                </Carousel.Caption>
+              </Carousel.Item>
+              <Carousel.Item>
+                <img 
+                  className="d-block w-100"
+                  src="/imagenes/portada.jpg"
+                  alt="Third slide"
+                />
+                <Carousel.Caption>
+                  <h3>Second slide label</h3>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </Carousel.Caption>
+              </Carousel.Item>
+              <Carousel.Item>
+                <img 
+                  className="d-block w-100"
+                  src="/imagenes/portada.jpg"
+                  alt="Third slide"
+                />
+
+                <Carousel.Caption>
+                  <h3>Third slide label</h3>
+                  <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+                </Carousel.Caption>
+              </Carousel.Item>
+            </Carousel>
+            </Container>
+            <Route path="/" exact={true} component={VistaPrincipal}/>
+            <Route path="/articulo/:id" component={VistaDetalles}/>
+
+            </body> 
+            </header>
+         
+            
+            <footer >
+              <Navbar  bg="dark" variant="dark" expand="lg" className="justify-content-center" >
+                <Nav.Item id="footer">
+                  Todos los derechos reservados
+                </Nav.Item>
+                <Nav.Item>
+                  <Nav.Link href="https://www.instagram.com/home__audio">
+                  <i class="fa fa-instagram" id="footer"></i>
+                  </Nav.Link>
+                </Nav.Item>
+                <Nav.Item>
+                  <Nav.Link href="https://www.facebook.com/HOME-AUDIO-289083307917016">
+                    <i class="fa fa-facebook-square" id="footer"></i>
+                  </Nav.Link>
+                </Nav.Item>
+              </Navbar>
+  </footer>      
     </BrowserRouter>
   );
 }

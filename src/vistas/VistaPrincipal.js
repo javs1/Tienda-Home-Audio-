@@ -1,30 +1,29 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import info from '../info'
+import {Card,CardDeck} from 'react-bootstrap'
+import 'bootstrap/dist/css/bootstrap.min.css'
+
 
 function VistaPrincipal(props){
-    return <ul class="productos">
+    return <CardDeck id="tarjeta_articulo" className="justify-content-center">
     {
         info.productos.map(articulo =>
-    <li>
-        
-        <div class="articulo">
-            <Link to={'/articulo/'+articulo.id}>
-            <img class="imagen_articulo" src={articulo.imagen} alt=""></img>
-            <div class="nombre_articulo">
+            <Card  id="carta_articulo" fluid>
+            <Card.Img variant="top" src={articulo.imagen} />
+            <Card.Body>
+            <Card.Title><Link to={'/articulo/'+articulo.id}></Link></Card.Title>
+            <Card.Text>
                 <Link to={'/articulo/'+articulo.id}>{articulo.nombre}</Link>
-            </div>
-            </Link>
+            </Card.Text>
             <div class="marca_articulo">{articulo.marca}</div>
             <div class="precio_articulo">${articulo.precio}</div>
             <div class="reseña_articulo">{articulo.reseña} estrellas ({articulo.num_reseñas})</div>
-            
-        </div>
-        
-    </li>
+            </Card.Body>
+            </Card>   
         )
     }  
-</ul>
+    </CardDeck>
 }
 
 export default VistaPrincipal
