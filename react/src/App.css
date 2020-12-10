@@ -1,0 +1,29 @@
+html,body{
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+body{
+    margin: 0px;
+    overflow-y: visible;
+}
+#footer{
+    color: white;
+}
+#enlace{
+    text-decoration: none;
+}
+
+
+/*Cartas de articulos*/
+li{
+    list-style: none;
+}
+#carta_articulo{
+    min-width: 18rem;
+    max-width: 18rem;
+    align-items: center;
+    margin: 1rem;
+}
+
+
+
