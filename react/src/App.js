@@ -12,9 +12,9 @@ function App() {
       
    <BrowserRouter>
 
-    <head>
+    
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></link>
-    </head>
+   
           
             
             <Navbar bg="dark" variant="dark" expand="lg" sticky="top" >
@@ -112,12 +112,12 @@ function App() {
                 </Nav.Item>
                 <Nav.Item>
                   <Nav.Link href="https://www.instagram.com/home__audio">
-                  <i class="fa fa-instagram" id="footer"></i>
+                  <i className="fa fa-instagram" id="footer"></i>
                   </Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
                   <Nav.Link href="https://www.facebook.com/HOME-AUDIO-289083307917016">
-                    <i class="fa fa-facebook-square" id="footer"></i>
+                    <i className="fa fa-facebook-square" id="footer"></i>
                   </Nav.Link>
                 </Nav.Item>
               </Navbar>
